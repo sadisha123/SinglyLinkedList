@@ -21,9 +21,24 @@ public class LinkedList {
 
     }
 
-    add(int index, int number){}
+    public void add(int index, int data){
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
 
-    remove(int index){}
+        if(index==0){
+            insertAtStar(data);
+        }else{
+            Node n = head;
+            for(int i=0; i<index-1; i++){
+                n = n.next;
+            }
+            node.next = n.next;
+            n.next = node;
+        }
+    }
+
+    public void remove(int index){}
 
     get(int index){}
 
